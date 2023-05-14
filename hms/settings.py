@@ -32,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS=True
-CSRF_TRUSTED_ORIGINS = ["https://*"]
+CSRF_TRUSTED_ORIGINS = ["https://aces-hms.up.railway.app"]
 
 
 # Application definition

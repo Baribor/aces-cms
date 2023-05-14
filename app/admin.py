@@ -3,50 +3,38 @@ from .models import *
 
 # Register your models here.
 
-@admin.register(Patient)
-class PatientAdmin(admin.ModelAdmin):
-    list_display = ("id","name", "gender", "phone", "email")
+@admin.register(Member)
+class MemberAdmin(admin.ModelAdmin):
+    list_display = ("id","firstName", "lastName", "phone", "gender","occupation")
 
-@admin.register(LabAssistant)
-class LabAssistantAdmin(admin.ModelAdmin):
-    list_display = ("id","name", "salary")
+@admin.register(Church)
+class ChurchAdmin(admin.ModelAdmin):
+    list_display = ("id","name", "location", "description")
 
-@admin.register(Doctor)
-class DoctorAdmin(admin.ModelAdmin):
-    list_display = ("id","name", "salary")
+@admin.register(Event)
+class EventAdmin(admin.ModelAdmin):
+    list_display = ("id","theme", "attendance", "guests", "date", "churchId")
 
-@admin.register(Nurse)
-class NurseAdmin(admin.ModelAdmin):
-    list_display = ("id","name", "salary")
+@admin.register(Payroll)
+class PayrollAdmin(admin.ModelAdmin):
+    list_display = ("id","amount", "memberId", "date")
 
-@admin.register(Receptionist)
-class ReceptionistAdmin(admin.ModelAdmin):
-    list_display = ("id","name", "salary")
+@admin.register(Seed)
+class SeedAdmin(admin.ModelAdmin):
+    list_display = ("id","type", "amount", "memberId", "churchId", "description")
 
-@admin.register(Cashier)
-class CashierAdmin(admin.ModelAdmin):
-    list_display = ("id","name", "salary")
+@admin.register(Activity)
+class ActivityAdmin(admin.ModelAdmin):
+    list_display = ("name", "churchId")
 
-@admin.register(Medicine)
-class MedicineAdmin(admin.ModelAdmin):
-    list_display=("name", "quantity")
+@admin.register(Department)
+class DepartmentAdmin(admin.ModelAdmin):
+    list_display=("name", "description", "churchId")
 
-@admin.register(Appointment)
-class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ("id", "doctorId", "nurseId", "patientId", "date")
+@admin.register(Sermon)
+class SermonAdmin(admin.ModelAdmin):
+    list_display = ("id", "topic", "speaker", "description")
 
-@admin.register(Bill)
-class BillAdmin(admin.ModelAdmin):
-    list_display = ("cashierId", "patientId", "amount", "time")
-
-@admin.register(Pharmacist)
-class PharmacistAdmin(admin.ModelAdmin):
-    list_display = ("id","name", "salary")
-
-@admin.register(Prescription)
-class PrescriptionAdmin(admin.ModelAdmin):
-    list_display = ("patientId", "doctorId", "pharmacistId", "date")
-
-@admin.register(LabResult)
-class LabResultAdmin(admin.ModelAdmin):
-    list_display = ("patientId", "labAssistantId", "description", "date")
+@admin.register(ActivityDetail)
+class ActivityDetailsAdmin(admin.ModelAdmin):
+    list_display = ("attendance", "guests", "activity", "income", "date")

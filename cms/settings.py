@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'hms.urls'
+ROOT_URLCONF = 'cms.urls'
 
 TEMPLATES = [
     {
@@ -77,18 +77,17 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hms.wsgi.application'
+WSGI_APPLICATION = 'cms.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASE_URL = os.getenv('DATABASE_URL')
-bgf = "postgres://aces:theamazon@localhost:5432/aces-hms"
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=bgf, conn_max_age=1800)
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800)
 }
 
 
@@ -141,13 +140,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "ACES HMS ADMIN",
+    "site_title": "ACES CMS ADMIN",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "ACES HMS ADMIN",
+    "site_header": "ACES CMS ADMIN",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "ACES HMS ADMIN",
+    "site_brand": "ACES CMS ADMIN",
 
 
     # CSS classes that are applied to the logo above
@@ -155,7 +154,7 @@ JAZZMIN_SETTINGS = {
 
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to ACES HMS ADMIN",
+    "welcome_sign": "CMS Administration",
 
    
 
@@ -163,5 +162,5 @@ JAZZMIN_SETTINGS = {
 
 
 JAZZMIN_UI_TWEAKS = {
-  "theme": "journal"
+  "theme": "spacelab"
 }

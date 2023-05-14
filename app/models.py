@@ -4,6 +4,9 @@ class Staff(models.Model):
     name = models.CharField(max_length=50, blank=False, null=False)
     salary = models.DecimalField(max_digits=6, decimal_places=2)
 
+    def __str__(self) -> str:
+        return self.name
+
     class Meta:
         abstract = True
 
@@ -13,6 +16,9 @@ class Patient(models.Model):
     email = models.CharField(blank=True, null=True, max_length=100)
     gender = models.CharField(blank=False, null=False, max_length=6, choices=(("Male","Male"), ("Female", "Female")))
     phone = models.CharField(blank=True, null=True, max_length=15)
+
+    def __str__(self) -> str:
+        return self.name
 
     class Meta:
         db_table = "User"

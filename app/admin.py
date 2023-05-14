@@ -5,48 +5,48 @@ from .models import *
 
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id","name", "gender", "phone", "email")
 
 @admin.register(LabAssistant)
 class LabAssistantAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id","name", "salary")
 
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id","name", "salary")
 
 @admin.register(Nurse)
 class NurseAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id","name", "salary")
 
 @admin.register(Receptionist)
 class ReceptionistAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id","name", "salary")
 
 @admin.register(Cashier)
 class CashierAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id","name", "salary")
 
 @admin.register(Medicine)
 class MedicineAdmin(admin.ModelAdmin):
-    pass
+    list_display=("name", "quantity")
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id", "doctorId", "nurseId", "patientId", "date")
 
 @admin.register(Bill)
 class BillAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("cashierId", "patientId", "amount", "time")
 
 @admin.register(Pharmacist)
 class PharmacistAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id","name", "salary")
 
 @admin.register(Prescription)
 class PrescriptionAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("patientId", "doctorId", "pharmacist", "medicines", "date")
 
 @admin.register(LabResult)
 class LabResultAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("patientId", "labAssistantId", "description", "date")

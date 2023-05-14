@@ -45,7 +45,7 @@ class PharmacistAdmin(admin.ModelAdmin):
 
 @admin.register(Prescription)
 class PrescriptionAdmin(admin.ModelAdmin):
-    list_display = ("patientId", "doctorId", "pharmacist", "medicines", "date")
+    list_display = ("patientId", "doctorId", "pharmacistId", "date")
 
 @admin.register(LabResult)
 class LabResultAdmin(admin.ModelAdmin):
